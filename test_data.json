@@ -1,0 +1,22 @@
+{
+  "stadiums": [
+    {
+      "id": 1,
+      "capacity": 100,
+      "price_per_seat": 20.7
+    }
+  ],
+  "players": [
+    {
+      "id": 1,
+      "first_name": "Alex",
+      "last_name": "Smith",
+      "birth_date": "2000-12-03",
+      "status": "good",
+      "health": "good",
+      "salary": 100.2
+    }
+  ],
+  "games": [
+  ]
+}

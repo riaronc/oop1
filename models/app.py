@@ -1,9 +1,9 @@
+from controllers.commands import parse_data
 from models.core_classes import Stack
 from models.game import Game
 from models.player import Player
 from models.stadium import Stadium
 from tools import app_setup
-from controllers.commands import parse_data
 
 
 class App:
@@ -26,10 +26,10 @@ class App:
 
     def execute_command(self, command: str):
         models = {'players': self.players, 'games': self.games, 'stadiums': self.stadiums}
-        actions = {'list': Stack.show_all, 'create': Stack.push, 'delete': Stack.delete}
+        actions = ('list', 'create', 'delete')
 
-        if command not in actions.keys():
-            print(f"Available commands: {list(actions.keys())}")
+        if command not in actions:
+            print(f"Available commands: {actions}")
             return
 
         print(f"Choose the model: {list(models.keys())}")
@@ -37,4 +37,3 @@ class App:
         if model not in models.keys():
             print("Bad model")
             return
-
