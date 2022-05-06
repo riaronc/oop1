@@ -9,3 +9,12 @@ class Player(Updateable):
     status: str
     health: str
     salary: float
+
+    def __init__(self, **kwargs):
+        self.id = kwargs["id"]
+        self.first_name = kwargs["first_name"]
+        self.last_name = kwargs["last_name"]
+        self.birth_date = kwargs["birth_date"]
+        self.status = kwargs["status"]
+        self.health = kwargs["health"]
+        self.salary = kwargs["salary"]

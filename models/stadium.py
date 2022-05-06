@@ -1,5 +1,4 @@
-from models.core_classes import Stack
-from models.game import Game
+from models.core_classes import Updateable
 
 
 class Stadium(Updateable):
@@ -7,4 +6,7 @@ class Stadium(Updateable):
     capacity: int
     price_per_seat: float
 
-    games: Stack[Game]
+    def __init__(self, **kwargs):
+        self.id = kwargs["id"]
+        self.capacity = kwargs["capacity"]
+        self.price_per_seat = kwargs["price_per_seat"]
