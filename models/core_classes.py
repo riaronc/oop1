@@ -4,24 +4,28 @@ T = TypeVar('T')
 
 
 class Stack(Generic[T]):
-    def __init__(self, data: list[T] = []) -> None:
-        # Create an empty list with items of type T
-        self.items: list[T] = data
+    items: list[T]
 
-    def push(self, item: T) -> None:
+    def __init__(self) -> None:
+        # Create an empty list with items of type T
+        self.items: list[T] = []
+
+    def add(self, item: T) -> None:
         self.items.append(item)
 
-    def delete(self) -> T:
-        return self.items.pop()
+    def delete(self, id) -> T:
+        i = self.find(id=id)
+        return self.items.pop(i)
 
     def show_all(self) -> None:
         for item in self.items:
             print(item)
 
     def find(self, id) -> T:
-        for item in self.items:
-            if id == item.id:
-                return item
+        id = int(id)
+        for i in range(len(self.items)):
+            if id == self.items[i].id:
+                return i
         return None
 
 

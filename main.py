@@ -1,4 +1,4 @@
-from models.app import App
+from views.app import App
 
 if __name__ == '__main__':
     app = App()

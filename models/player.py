@@ -18,3 +18,6 @@ class Player(Updateable):
         self.status = kwargs["status"]
         self.health = kwargs["health"]
         self.salary = kwargs["salary"]
+
+    def __repr__(self):
+        return f"Player: id={self.id} ({self.first_name} {self.last_name})"

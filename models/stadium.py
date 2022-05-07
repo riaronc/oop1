@@ -10,3 +10,6 @@ class Stadium(Updateable):
         self.id = kwargs["id"]
         self.capacity = kwargs["capacity"]
         self.price_per_seat = kwargs["price_per_seat"]
+
+    def __repr__(self):
+        return f"Stadium id={self.id}"
