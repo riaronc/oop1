@@ -72,10 +72,9 @@ class App:
         return input_
 
     def save_data(self):
-        result = {}
-        result["stadiums"] = {vars(s) for s in self.stadiums.items}
-        result["players"] = {vars(s) for s in self.players.items}
-        result["games"] = {vars(s) for s in self.games.items}
+        result = {"stadiums": {vars(s) for s in self.stadiums.items},
+                  "players": {vars(s) for s in self.players.items},
+                  "games": {vars(s) for s in self.games.items}}
         with open(self.filename, 'w') as file:
             file.write(str(result))
             print("Successfully saved all the data")
